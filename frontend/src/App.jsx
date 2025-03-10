@@ -1,12 +1,10 @@
-import { Box, Button} from '@chakra-ui/react'
+import { Box} from '@chakra-ui/react'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CreatePage from './pages/CreatePage'
-import NavBar from './components/ui/Navbar'
+import Navbar from './components/Navbar'
 import { Toaster } from './components/ui/toaster'
-import Demo from './pages/Demo.jsx'
 
-// import ProductCard from './components/ProductCard.jsx'
 
 function App() {  
   
@@ -14,7 +12,7 @@ function App() {
   return (
     <>
       <Box minH={"100vh"} >
-          <NavBar></NavBar>
+          <Navbar></Navbar>
           <Toaster />
           <Routes>
               <Route path='/' element={<HomePage></HomePage>}></Route>

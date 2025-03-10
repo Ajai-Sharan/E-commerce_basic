@@ -16,7 +16,7 @@ const HomePage = () => {
     <Container maxW='container.xl' py={12}>
       
 
-			<VStack spacing={8}>
+	<VStack spacing={8}>
 				
         <Text
             fontSize={"25px"}

@@ -7,7 +7,8 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { CiSquarePlus } from "react-icons/ci";
-import { ColorModeButton, useColorModeValue } from "./color-mode";
+import { ColorModeButton, useColorModeValue } from "./ui/color-mode";
+
 
 const Navbar = () => {
 
