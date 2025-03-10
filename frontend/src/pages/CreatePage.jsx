@@ -1,5 +1,5 @@
 import { toaster } from '@/components/ui/toaster'
-
+import { useNavigate } from 'react-router-dom';
 import { useProductStore } from '@/store/product.store'
 import {
     Container,
@@ -19,6 +19,7 @@ const CreatePage = () => {
     })
 
     const { createProduct } = useProductStore();
+    const navigate = useNavigate();
 
     const handleOnClick = async (e) => {
         e.preventDefault();
@@ -31,14 +32,14 @@ const CreatePage = () => {
                 description: message,
                 type: "success",
             })
+            setNewProduct({name : "", price : "", image : ""});
+            navigate('/'); // Navigate to the home page
         } else {
             toaster.create({
                 description: message,
                 type: "error",
             })
         }
-
-        setNewProduct({name : "", price : "", image : ""});
     }
 
     return (
@@ -92,7 +93,7 @@ const CreatePage = () => {
                         colorScheme="blue"
                         alignSelf="flex-start"
                         width="full"
-                        onClick={(e) => handleOnClick(e)}
+                        onClick={handleOnClick}
                     >
                         Create Product
                     </Button>

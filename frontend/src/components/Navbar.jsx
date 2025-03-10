@@ -2,18 +2,16 @@ import {
     Container,
     Flex,
     HStack,
-    Button,
     Text,
+    IconButton,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { CiSquarePlus } from "react-icons/ci";
 import { ColorModeButton, useColorModeValue } from "./ui/color-mode";
 
-
 const Navbar = () => {
-
     return (
-        <Container maxW={"1140px"} mt={4} px={4} bg={useColorModeValue("gray.100", "gray.900")}  borderRadius="lg">
+        <Container maxW={"1140px"} mt={4} px={4} bg={useColorModeValue("gray.100", "gray.900")} borderRadius="lg">
             <Flex
                 h={16}
                 alignItems={"center"}
@@ -38,18 +36,18 @@ const Navbar = () => {
 
                 <HStack spacing={2} alignItems={"center"}>
                     <Link to={"/create"}>
-                        <Button 
-                            bg={useColorModeValue("gray.100", "gray.900")}
+                        <IconButton
+                            variant="ghost"
+                            aria-label="Create Product"
+                            size="lg"
                         >
-                            <CiSquarePlus 
-                                fontSize={20} 
-                                color={useColorModeValue("black","white")}
-                            />
-                        </Button>
+                            <CiSquarePlus fontSize={"50px"} color={useColorModeValue("black", "white")} />
+
+                            </IconButton>
+
                     </Link>
                     <ColorModeButton />
                 </HStack>
-
             </Flex>
         </Container>
     );
