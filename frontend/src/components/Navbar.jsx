@@ -10,8 +10,9 @@ import { CiSquarePlus } from "react-icons/ci";
 import { ColorModeButton, useColorModeValue } from "./ui/color-mode";
 
 const Navbar = () => {
+    
     return (
-        <Container maxW={"1140px"} mt={4} px={4} bg={useColorModeValue("gray.100", "gray.900")} borderRadius="lg">
+        <Container maxW={"1140px"} mt={4} px={4} borderRadius="lg" boxShadow={"lg"}>
             <Flex
                 h={16}
                 alignItems={"center"}
