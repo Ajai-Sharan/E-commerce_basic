@@ -9,12 +9,5 @@ export default defineConfig({
     alias: {
       '@': path.resolve('./src')
     }
-  },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000'
-      }
-    }
   }
 })
