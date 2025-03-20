@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "proxy": {
-    "/api": "http://localhost:5000"
+    "/api": "https://e-commerce-basic-gtszmiwla-ajai-sharans-projects.vercel.app"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.11.0",
