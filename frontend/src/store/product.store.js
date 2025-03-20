@@ -2,10 +2,12 @@ import { create } from 'zustand';
 
 export const useProductStore = create((set) => ({
     products: [],
+    loading: false,
     setProducts: (products) => set({ products }),
+    setLoading: (loading) => set({ loading }),
     createProduct: async (newProduct) => {
         try {
-            const res = await fetch('/api/product', {
+            const res = await fetch('http://localhost:5000/api/product', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,8 +35,9 @@ export const useProductStore = create((set) => ({
         }
     },
     fetchProducts: async () => {
+        set({ loading: true });
         try {
-            const res = await fetch('/api/product');
+            const res = await fetch('http://localhost:5000/api/product');
             if (!res.ok) {
                 throw new Error('Failed to fetch products');
             }
@@ -42,11 +45,13 @@ export const useProductStore = create((set) => ({
             set({ products: data.data });
         } catch (error) {
             console.error('Error fetching products:', error);
+        } finally {
+            set({ loading: false });
         }
     },
     deleteProduct: async (pid) => {
         try {
-            const res = await fetch(`/api/product/${pid}`, {
+            const res = await fetch(`http://localhost:5000/api/product/${pid}`, {
                 method: 'DELETE',
             });
 
@@ -63,7 +68,7 @@ export const useProductStore = create((set) => ({
     },
     updateProduct: async (pid, updatedProduct) => {
         try {
-            const res = await fetch(`/api/product/${pid}`, {
+            const res = await fetch(`http://localhost:5000/api/product/${pid}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

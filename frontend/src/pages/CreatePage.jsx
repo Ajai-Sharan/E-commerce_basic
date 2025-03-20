@@ -33,7 +33,7 @@ const CreatePage = () => {
                 type: "success",
             })
             setNewProduct({name : "", price : "", image : ""});
-            navigate('/'); // Navigate to the home page
+            navigate('/');
         } else {
             toaster.create({
                 description: message,
