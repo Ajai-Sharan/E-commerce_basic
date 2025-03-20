@@ -8,11 +8,7 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = ['https://e-commerce-basic-gules.vercel.app'];
-app.use(cors({
-    origin: allowedOrigins,
-    credentials: true, // If you need to send cookies or authentication headers
-}));
+app.use(cors({ origin: "https://e-commerce-basic-gules.vercel.app" }));
 
 app.use(express.json());
 
