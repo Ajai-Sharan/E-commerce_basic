@@ -9,9 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "proxy": {
-    "/api": "https://e-commerce-basic-gtszmiwla-ajai-sharans-projects.vercel.app"
-  },
   "dependencies": {
     "@chakra-ui/react": "^3.11.0",
     "@emotion/react": "^11.14.0",
