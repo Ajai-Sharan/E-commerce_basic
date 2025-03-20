@@ -8,7 +8,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = ['https://e-commerce-basic-gules.vercel.app'];
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true, // If you need to send cookies or authentication headers
+}));
+
 app.use(express.json());
 
 
